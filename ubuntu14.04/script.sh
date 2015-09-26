@@ -11,3 +11,5 @@ sudo dpkg-reconfigure -f noninteractive tzdata
 sudo apt-get update
 #sudo apt-get upgrade -y
 #sudo apt-get dist-upgrade -y
+
+#sudo apt-get install -y git tmux emacs24-nox tree unzip curl wget colordiff golang
