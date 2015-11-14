@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.hostname = 'ubuntu1404-digitalocean'
+  config.vm.hostname = 'ubuntu1404.digitalocean.default'
 
   config.vm.provider :digital_ocean do |provider, override|
     override.ssh.private_key_path = '~/.ssh/digitalocean/id_rsa'

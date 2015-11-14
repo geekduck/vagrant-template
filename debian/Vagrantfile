@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "debian"
-  config.vm.hostname = "debian-default"
+  config.vm.hostname = "debian.default"
 
   # VMのスペックを設定
   # ディスクを追加する
