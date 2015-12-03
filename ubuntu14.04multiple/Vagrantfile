@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     web.vm.network :private_network, ip:"192.168.50.11"
   end
 
-  config.vm.define :web do |db|
+  config.vm.define :db do |db|
     db.vm.box = "ubuntu14.04"
     db.vm.hostname = "ubuntu.web.default"
     db.vm.network :private_network, ip:"192.168.50.12"
