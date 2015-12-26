@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     aws.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
     aws.keypair_name      = "aws-duck1218-key"
 
-    aws.ami             = "ami-4985b048"
+    aws.ami             = "ami-383c1956"
     aws.instance_type   = "t2.micro"
     aws.security_groups = [ 'Vagrant-SG' ]
     aws.region          = "ap-northeast-1"
