@@ -1,8 +1,8 @@
 #! /bin/sh
 
 # set locale
-sudo /usr/sbin/locale-gen ja_JP.UTF-8
-sudo /usr/sbin/dpkg-reconfigure -f noninteractive locales
+sudo sh -c "locale-gen ja_JP.UTF-8"
+sudo sh -c "pkg-reconfigure -f noninteractive locales"
 
 # set timezone
 sudo sh -c "echo 'Asia/Tokyo' > /etc/timezone"
