@@ -1,0 +1,27 @@
+# coding: utf-8
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "ubuntu16.04"
+  config.vm.hostname = "ubuntu.default"
+
+  # VMのスペックを設定
+  # ディスクを追加する
+  #file_to_disk = '~/path/to/disk/vdi'
+  #config.vm.provider :virtualbox do |vb|
+  #  vb.customize ["modifyvm", :id, "--memory", "1024", "--cpus", "1", "--ioapic", "on"]
+  #  vb.customize ['createhd', '--filename', file_to_disk, '--size', 1000 * 1024]
+  #  vb.customize ['storageattach', :id, '--storagectl', 'IDE Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
+  #end
+
+  config.vm.network :private_network, ip: "192.168.33.11"
+  config.vm.network "forwarded_port", guest: 22, host: 10022
+
+  #config.vm.provision "ansible" do |ansible|
+  #  ansible.playbook = "ansible/site.yml"
+  #  ansible.inventory_path = "ansible/hosts"
+  #  ansible.limit = 'all'
+  #end
+  config.vm.provision "shell", path: "script.sh"
+end
