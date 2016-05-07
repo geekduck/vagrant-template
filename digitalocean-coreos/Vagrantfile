@@ -1,0 +1,22 @@
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = '2'
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.hostname = 'coreos.digitalocean.default'
+
+  config.vm.provider :digital_ocean do |provider, override|
+    override.ssh.private_key_path = ENV['DO_KEYPAIR_NAME']
+    override.vm.box               = 'digital_ocean'
+    override.vm.box_url           = 'https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box'
+
+    provider.client_id            = ENV['DO_CLIENT_ID']
+    provider.api_key              = ENV['DO_API_KEY']
+    provider.token                = ENV['DO_TOKEN']
+    provider.image                = 'coreos-beta'
+    provider.region               = 'sgp1'
+    provider.size                 = '512mb'
+    provider.ssh_key_name         = ENV['DO_KEY_NAME']
+  end
+
+  config.vm.provision 'shell', path: 'script.sh'
+end
