@@ -5,14 +5,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :web do |web|
     web.vm.box = 'ubuntu14.04'
     web.vm.hostname = 'ubuntu.web.default'
-    web.vm.network :private_network, ip:'192.168.50.11'
+    web.vm.network :private_network, ip:'192.168.30.11'
     #web.ssh.insert_key = false
   end
 
   config.vm.define :db do |db|
     db.vm.box = 'ubuntu14.04'
     db.vm.hostname = 'ubuntu.web.default'
-    db.vm.network :private_network, ip:'192.168.50.12'
+    db.vm.network :private_network, ip:'192.168.30.12'
     #db.ssh.insert_key = false
   end
 
